@@ -1,8 +1,8 @@
  <entry name="{{ username }}">
-  <permissions>
-    <role-based>
-      <superuser>yes</superuser>
-    </role-based>
-  </permissions>
-  <phash>{{ password | md5_hash }}</phash>
+   <phash>{{ password | md5_hash }}</phash>
+    <permissions>
+      <role-based>
+        <superuser>yes</superuser>
+      </role-based>
+    </permissions>
 </entry>
