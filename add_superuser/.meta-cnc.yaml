@@ -1,0 +1,37 @@
+# unique snippet name
+name: superUser
+# label used for menu selection
+label: Add superuser with password
+description: Add superuser with password
+
+# type of device configuration
+# common types are panorama, panos, and template
+# https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
+type: panos
+# preload static or default-based templates
+extends:
+
+# grouping of like snippets for dynamic menu creation in panhandler
+labels:
+  collection:
+    - management
+
+# variables used in the configuration templates
+# type_hint defines the form field used by panhandler
+# type_hints can be text, ip_address, or dropdown
+variables:
+  - name: username
+    description: username
+    default: sooper
+    type_hint: text
+  - name: password
+    description: password
+    default: password
+    type_hint: password
+
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+  - name: superuser
+    xpath: /config/mgt-config/users
+    file: user.xml
