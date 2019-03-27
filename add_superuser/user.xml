@@ -4,5 +4,5 @@
       <superuser>yes</superuser>
     </role-based>
   </permissions>
-  <phash>{{ password | md5_hash }}</phash>
+  <phash>{{ password }}</phash>
 </entry>
